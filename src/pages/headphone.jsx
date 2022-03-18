@@ -17,13 +17,13 @@ export default function Invoice() {
       .catch(function (error) {
         console.log(error);
       });
-  },);
+  });
 
   var rows = [];
   for (var i = 0; i < data.length; i++) {
     // note: we are adding a key prop here to allow react to uniquely identify each
     // element in this array. see: https://reactjs.org/docs/lists-and-keys.html
-    let num = data[i].headphone.toString()
+    let num = data[i].headphone.toString();
     if (num === params.headphoneId) {
       rows.push(<div>{data[i].review}</div>);
     }

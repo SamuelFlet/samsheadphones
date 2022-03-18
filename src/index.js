@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import Header from "./components/Header.jsx"
 import Headphones from "./pages/headphones.jsx";
 import Headphone from "./pages/headphone.jsx"
 import reportWebVitals from "./reportWebVitals";
@@ -8,9 +9,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>
+  <Header />
     <Routes>
-      <Route path="/" element={<Headphones />} />
-      <Route path=":headphoneId" element={<Headphone />} />
+      <Route path="/headphones" element={<Headphones />} />
+      <Route path="headphones/:headphoneId" element={<Headphone />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")
