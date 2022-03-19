@@ -27,6 +27,7 @@ export default function Invoice() {
   };
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   var rows = [];
@@ -44,13 +45,13 @@ export default function Invoice() {
   }
 
   return (
-  <div>
-    {hdata.name}
-    <br></br>
-    {hdata.description}
-    <br></br>
-    <br></br>
-    {rows}
-  </div>);
-  
+    <div>
+      {hdata.name}
+      <br></br>
+      {hdata.description}
+      <br></br>
+      <br></br>
+      {rows}
+    </div>
+  );
 }
