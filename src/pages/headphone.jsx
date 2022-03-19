@@ -25,7 +25,7 @@ export default function Invoice() {
     // element in this array. see: https://reactjs.org/docs/lists-and-keys.html
     let num = data[i].headphone.toString();
     if (num === params.headphoneId) {
-      rows.push(<div>{data[i].review}</div>);
+      rows.push(<div>{data[i].username}: {data[i].review}</div>);
     }
   }
 

@@ -20,10 +20,10 @@ export default class PersonList extends React.Component {
         {this.state.headphones.map((headphone) => (
           <Link
             style={{ display: "block", margin: "1rem 0" }}
-            to={`headphones/${headphone.id}`}
+            to={`${headphone.id}`}
             key={headphone.id}
           >
-            {headphone.name}
+            {headphone.name}: {headphone.description}
           </Link>
         ))}
       </div>
