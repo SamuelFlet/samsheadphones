@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../styles/App.css"
+import "../styles/App.css";
+import Table from "react-bootstrap/Table";
 
 export default class PersonList extends React.Component {
   state = {
@@ -18,15 +19,30 @@ export default class PersonList extends React.Component {
   render() {
     return (
       <div className="App">
-        {this.state.headphones.map((headphone) => (
-          <Link
-            style={{ display: "block", margin: "1rem 0" }}
-            to={`${headphone.id}`}
-            key={headphone.id}
-          >
-            {headphone.name}: {headphone.description}
-          </Link>
-        ))}
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Headphone ID</th>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.headphones.map((headphone) => (
+              <tr>
+                <td>{headphone.id}</td>
+                <Link
+                  style={{ display: "block", margin: "1rem 0" }}
+                  to={`${headphone.id}`}
+                  key={headphone.id}
+                >
+                  <td>{headphone.name}</td>
+                  <td>{headphone.description}</td>
+                </Link>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </div>
     );
   }
