@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./styles/index.css"
 import Header from "./components/Header.jsx"
 import Headphones from "./pages/headphones.jsx";
 import Headphone from "./pages/headphone.jsx"

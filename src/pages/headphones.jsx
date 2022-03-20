@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "../styles/App.css"
 
 export default class PersonList extends React.Component {
   state = {
@@ -16,7 +17,7 @@ export default class PersonList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         {this.state.headphones.map((headphone) => (
           <Link
             style={{ display: "block", margin: "1rem 0" }}
