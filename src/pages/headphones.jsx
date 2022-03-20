@@ -37,8 +37,8 @@ export default class PersonList extends React.Component {
                   key={headphone.id}
                 >
                   <td>{headphone.name}</td>
-                  <td>{headphone.description}</td>
                 </Link>
+                <td>{headphone.description}</td>
               </tr>
             ))}
           </tbody>
