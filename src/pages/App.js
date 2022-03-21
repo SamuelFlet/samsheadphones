@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Nav from "../components/nav";
 import LoginForm from "../components/loginForm";
 import SignupForm from "../components/SignupForm";
 import "../styles/App.css";
@@ -80,29 +79,19 @@ class App extends Component {
   };
 
   render() {
-    let form;
-    switch (this.state.displayed_form) {
-      case "login":
-        form = <LoginForm handle_login={this.handle_login} />;
-        break;
-      case "signup":
-        form = <SignupForm handle_signup={this.handle_signup} />;
-        break;
-      default:
-        form = null;
+    if (this.state.logged_in) {
+      return (
+        <div className="App">
+          <button onClick={this.handle_logout}>Logout</button>
+          <h3>Hello, {this.state.username}</h3>
+        </div>
+      );
     }
-
     return (
       <div className="App">
-        <Nav
-          logged_in={this.state.logged_in}
-          display_form={this.display_form}
-          handle_logout={this.handle_logout}
-        />
-        {form}
-        <h3>
-            Hello, {this.state.username}
-        </h3>
+        <LoginForm handle_login={this.handle_login} />
+        <br></br>
+        <SignupForm handle_signup={this.handle_signup} />
       </div>
     );
   }
