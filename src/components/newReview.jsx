@@ -6,7 +6,7 @@ const AddStudent = () => {
   const [headphone, setHeadphone] = useState([]);
   const [author, setAuthor] = useState(null);
   const [review, setReview] = useState(null);
-  const [rating, setRating] = useState(null);
+  const [price_rating, setprice_rating] = useState(0);
   const logged_in = useState(localStorage.getItem("token") ? true : false);
   let params = useParams();
 
@@ -28,7 +28,7 @@ const AddStudent = () => {
     formField.append("headphone", headphone);
     formField.append("author", author);
     formField.append("review", review);
-    formField.append("rating", rating);
+    formField.append("price_rating", price_rating);
 
     await axios({
       method: "post",
@@ -49,7 +49,7 @@ const AddStudent = () => {
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter the Headphone's Name"
+              placeholder="Enter your review here"
               name="name"
               value={review}
               onChange={(e) => setReview(e.target.value)}
@@ -58,12 +58,14 @@ const AddStudent = () => {
 
           <div className="form-group">
             <input
-              type="email"
+              type="number"
               className="form-control form-control-lg"
-              placeholder="Enter the Headphone's Description"
-              name="email"
-              value={rating}
-              onChange={(e) => setRating(e.target.value)}
+              placeholder="Enter your rate (Out of 5)"
+              name="price_rating"
+              min="0" 
+              max="5"
+              value={price_rating}
+              onChange={(e) => setprice_rating(e.target.value)}
             />
           </div>
 
