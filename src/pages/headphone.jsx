@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-
+import NewReview from "../components/newReview"
 
 export default function Invoice() {
   
@@ -54,6 +54,7 @@ export default function Invoice() {
       <br></br>
       <br></br>
       {rows}
+<NewReview />
     </div>
   );
 }
