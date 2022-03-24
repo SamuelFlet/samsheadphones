@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../styles/App.css";
 import Table from "react-bootstrap/Table";
 import NewHeadphone from "../components/new";
+
 export default class PersonList extends React.Component {
   state = {
     headphones: [],
