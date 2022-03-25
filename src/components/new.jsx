@@ -62,7 +62,7 @@ const AddStudent = () => {
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Control
               type="text"
-              placeholder="Enter the Headphone's Frequenct i.e (10Hz - 20KHz)"
+              placeholder="Enter the Headphone's Frequency Response Range i.e (10Hz - 20KHz)"
               name="frequency"
               value={frequency}
               onChange={(e) => setFrequency(e.target.value)}
