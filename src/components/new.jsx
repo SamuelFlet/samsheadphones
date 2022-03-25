@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const AddStudent = () => {
   const [name, setName] = useState(null);
@@ -22,35 +24,30 @@ const AddStudent = () => {
   return (
     <div className="container">
       <div className="container">
-        <div className="w-75 mx-auto shadow p-5">
-          <h2 className="text-center mb-4">Add a pair of Headphones</h2>
-
-          <div className="form-group">
-            <input
+        <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
               type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter the Headphone's Name"
+              placeholder="Enter headphone name"
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
-          </div>
+          </Form.Group>
 
-          <div className="form-group">
-            <input
-              type="email"
-              className="form-control form-control-lg"
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Control
+              type="text"
               placeholder="Enter the Headphone's Description"
-              name="email"
+              name="description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
-          </div>
-
-          <button className="btn btn-primary btn-block" onClick={addNewStudent}>
-            Add Headphones
-          </button>
-        </div>
+          </Form.Group>
+          <Button onClick={addNewStudent} variant="primary" type="submit">
+            Submit
+          </Button>
+        </Form>
       </div>
     </div>
   );

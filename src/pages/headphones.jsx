@@ -23,7 +23,6 @@ export default class PersonList extends React.Component {
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>Headphone ID</th>
               <th>Name</th>
               <th>Description</th>
             </tr>
@@ -31,7 +30,6 @@ export default class PersonList extends React.Component {
           <tbody>
             {this.state.headphones.map((headphone) => (
               <tr>
-                <td>{headphone.id}</td>
                 <Link
                   style={{ display: "block", margin: "1rem 0" }}
                   to={`${headphone.id}`}
