@@ -1,0 +1,8 @@
+.center{
+    text-align: center;
+}
+
+.display{
+    display: flex;
+    justify-content: space-evenly;
+}

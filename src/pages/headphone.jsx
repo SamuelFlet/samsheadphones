@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import NewReview from "../components/newReview"
+import NewReview from "../components/newReview";
+import "../styles/headphone.css";
 
 export default function Invoice() {
-  
   const [data, setData] = useState({});
   const [hdata, sethData] = useState({});
   let params = useParams();
@@ -47,14 +47,29 @@ export default function Invoice() {
   }
 
   return (
-    <div>
-      {hdata.name}
+    <div className="center">
+      <h1>{hdata.name}</h1>
+
       <br></br>
-      {hdata.description}
+      <h2>{hdata.description}</h2>
       <br></br>
-      <br></br>
+      <div className="display">
+        <div>
+          <p>Impedance</p>
+          <p>{hdata.impedance}ohm</p>
+        </div>
+        <div>
+          <p>Frequency</p>
+          <p>{hdata.frequency}</p>
+        </div>
+        <div>
+          <p>Sensitivity</p>
+          <p>{hdata.sensitivity}dB</p>
+        </div>
+      </div>
+
       {rows}
-<NewReview />
+      <NewReview />
     </div>
   );
 }
