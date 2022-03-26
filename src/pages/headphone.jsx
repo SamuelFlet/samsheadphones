@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import NewReview from "../components/newReview";
 import "../styles/headphone.css";
 
-export default function Invoice() {
+export default function Headphone() {
   const [data, setData] = useState({});
   const [hdata, sethData] = useState({});
   let params = useParams();
