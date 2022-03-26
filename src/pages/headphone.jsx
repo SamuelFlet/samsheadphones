@@ -56,7 +56,7 @@ export default function Invoice() {
       <div className="display">
         <div>
           <p>Impedance</p>
-          <p>{hdata.impedance}ohm</p>
+          <p>{hdata.impedance} Ω</p>
         </div>
         <div>
           <p>Frequency</p>
@@ -64,7 +64,7 @@ export default function Invoice() {
         </div>
         <div>
           <p>Sensitivity</p>
-          <p>{hdata.sensitivity}dB</p>
+          <p>{hdata.sensitivity} dB</p>
         </div>
       </div>
 

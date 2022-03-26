@@ -9,6 +9,7 @@ const AddStudent = () => {
   const [impedance, setImpedance] = useState(null);
   const [frequency, setFrequency] = useState(null);
   const [sensitivity, setSensitivity] = useState(null);
+  
   const addNewStudent = async () => {
     let formField = new FormData();
     formField.append("name", name);

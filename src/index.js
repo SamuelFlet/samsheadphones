@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.css"
 import Header from "./components/Header.jsx"
-import Headphones from "./pages/headphones.jsx";
+import Headphones from "./pages/headphones";
 import App from "./pages/App"
 import Headphone from "./pages/headphone.jsx"
 import reportWebVitals from "./reportWebVitals";

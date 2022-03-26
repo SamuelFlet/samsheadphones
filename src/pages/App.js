@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LoginForm from "../components/loginForm";
 import SignupForm from "../components/SignupForm";
 import "../styles/App.css";
+var is_logged_in = false;
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +15,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    if (this.state.logged_in) {
+    if (this.state.logged_in && !is_logged_in) {
+      is_logged_in = true;
       fetch("https://backendhead.herokuapp.com/core/current_user/", {
         headers: {
           Authorization: `JWT ${localStorage.getItem("token")}`,
@@ -92,6 +94,8 @@ class App extends Component {
         <LoginForm handle_login={this.handle_login} />
         <br></br>
         <SignupForm handle_signup={this.handle_signup} />
+        <br></br>
+        <h4>Usernames and Passwords are case sensitive</h4>
       </div>
     );
   }
