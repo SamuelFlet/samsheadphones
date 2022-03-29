@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./styles/index.css"
 import Header from "./components/Header.jsx"
 import Headphones from "./pages/headphones";
-import App from "./pages/App"
+import App from "./pages/App.jsx"
 import Headphone from "./pages/headphone.jsx"
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
