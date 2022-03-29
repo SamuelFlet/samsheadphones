@@ -9,7 +9,6 @@ export default function App() {
   const [loggedin, setLoggedin] = useState(
     localStorage.getItem("token") ? true : false
   );
-  const [displayed_form, setDisform] = useState("");
   const [username, setUsername] = useState("");
 
   useEffect(() => {
@@ -40,7 +39,6 @@ export default function App() {
       .then((json) => {
         localStorage.setItem("token", json.token);
         setLoggedin(true);
-        setDisform("");
         setUsername(json.user.username);
       });
   };
@@ -58,7 +56,6 @@ export default function App() {
       .then((json) => {
         localStorage.setItem("token", json.token);
         setLoggedin(true);
-        setDisform("");
         setUsername(json.username);
       });
   };
@@ -69,9 +66,6 @@ export default function App() {
     setUsername("")
   };
 
-  const display_form = (form) => {
-    setDisform(form);
-  };
 
   if (loggedin) {
     return (
