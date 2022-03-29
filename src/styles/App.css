@@ -1,4 +1,9 @@
 .App {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+.App2 {
   text-align: center;
 }
 
@@ -12,7 +17,9 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+h4{
+  text-align: center;
+}
 .center {
   text-align: center;
 }

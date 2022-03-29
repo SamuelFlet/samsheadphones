@@ -59,6 +59,9 @@ const AddStudent = () => {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Text className="text-muted">
+              Please enter a rating (0-5)
+            </Form.Text>
             <Form.Control
               type="number"
               placeholder="Enter your rate (Out of 5)"

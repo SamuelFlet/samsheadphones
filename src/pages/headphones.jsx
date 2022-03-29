@@ -19,7 +19,7 @@ export default function Headphones() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="">
       <Table bordered hover>
         <thead>
           <tr>

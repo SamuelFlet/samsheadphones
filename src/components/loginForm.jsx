@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from "react-bootstrap/Button";
 
 export default function LoginForm(props) {
   const [username, setUsername] = useState("");
@@ -14,21 +15,25 @@ export default function LoginForm(props) {
   return (
     <form onSubmit={e => props.handle_login(e, {username, password})}>
       <h4>Log In</h4>
-      <label htmlFor="username">Username</label>
+      <label htmlFor="username">Username&ensp;</label>
       <input
         type="text"
         name="username"
         value={username}
         onChange={handle_username}
       />
-      <label htmlFor="password">Password</label>
+      <br></br>
+      <br></br>
+      <label htmlFor="password">Password&ensp;</label>
       <input
         type="password"
         name="password"
         value={password}
         onChange={handle_password}
       />
-      <input type="submit" />
+      <br></br>
+      <br></br>
+      <Button type="submit" >Submit</Button>
     </form>
   );
 }

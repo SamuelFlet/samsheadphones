@@ -62,26 +62,31 @@ export default function App() {
 
   const handle_logout = () => {
     localStorage.removeItem("token");
-    setLoggedin(false)
-    setUsername("")
+    setLoggedin(false);
+    setUsername("");
   };
-
 
   if (loggedin) {
     return (
-      <div className="App">
+      <div className="App2">
         <button onClick={handle_logout}>Logout</button>
         <h3>Hello, {username}</h3>
       </div>
     );
   }
   return (
-    <div className="App">
-      <LoginForm handle_login={handle_login} />
-      <br></br>
-      <SignupForm handle_signup={handle_signup} />
-      <br></br>
+    <div>
       <h4>Usernames and Passwords are case sensitive</h4>
+      <div className="App">
+        <div style={{padding:"20px"}}>
+          <LoginForm handle_login={handle_login} />
+        </div>
+        <div style={{padding:"20px"}}>
+          <SignupForm handle_signup={handle_signup} />
+        </div>
+        <br></br>
+      </div>
+      
     </div>
   );
 }
