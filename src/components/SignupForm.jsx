@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+
 export default function SignupForm(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -12,27 +15,47 @@ export default function SignupForm(props) {
   };
 
   return (
-    <form onSubmit={(e) => props.handle_signup(e, {username, password})}>
-      <h4>Sign Up</h4>
-      <label htmlFor="username">Username&ensp;</label>
-      <input
-        type="text"
-        name="username"
-        value={username}
-        onChange={handle_username}
-      />
-      <br></br>
-      <br></br>
-      <label htmlFor="password">Password&ensp;</label>
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={handle_password}
-      />
-      <br></br>
-      <br></br>
-      <Button type="submit" >Submit</Button>
-    </form>
+    <div>
+      <Form>
+        <Form.Label>Sign Up</Form.Label>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Username"
+            className="mb-3"
+          >
+            <Form.Control
+              type="text"
+              placeholder="Enter your username"
+              name="name"
+              value={username}
+              onChange={handle_username}
+            />
+          </FloatingLabel>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Password"
+            className="mb-3"
+          >
+            <Form.Control
+              type="password"
+              placeholder="Enter your password"
+              name="description"
+              value={password}
+              onChange={handle_password}
+            />
+          </FloatingLabel>
+        </Form.Group>
+        <Button
+          variant="outline-primary"
+          onClick={(e) => props.handle_login(e, { username, password })}
+          type="submit"
+        >
+          Submit
+        </Button>
+      </Form>
+    </div>
   );
 }

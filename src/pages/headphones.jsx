@@ -19,29 +19,31 @@ export default function Headphones() {
   }, []);
 
   return (
-    <div className="">
-      <Table bordered hover>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {headphones.map((headphone) => (
+    <div>
+      <div className="table">
+        <Table bordered hover>
+          <thead>
             <tr>
-              <Link
-                style={{ display: "block", margin: "1rem 0" }}
-                to={`${headphone.id}`}
-                key={headphone.id}
-              >
-                <td>{headphone.name}</td>
-              </Link>
-              <td>{headphone.description}</td>
+              <th>Name</th>
+              <th>Description</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {headphones.map((headphone) => (
+              <tr>
+                <Link
+                  style={{ display: "block", margin: "1rem 0" }}
+                  to={`${headphone.id}`}
+                  key={headphone.id}
+                >
+                  <td>{headphone.name}</td>
+                </Link>
+                <td>{headphone.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
       <NewHeadphone />
     </div>
   );

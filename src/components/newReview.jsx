@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Rating } from "react-simple-star-rating";
 
 var is_logged_in = false;
 
@@ -27,13 +28,16 @@ const AddStudent = () => {
         setHeadphone(params.headphoneId);
       });
   }
-
+  const handleRating = (rate) => {
+    setprice_rating(rate)
+    // other logic
+  }
   const addNewStudent = async () => {
     let formField = new FormData();
     formField.append("headphone", headphone);
     formField.append("author", author);
     formField.append("review", review);
-    formField.append("price_rating", price_rating);
+    formField.append("price_rating", price_rating/20);
 
     await axios({
       method: "post",
@@ -46,6 +50,7 @@ const AddStudent = () => {
 
   return (
     <div className="container">
+      <h5>Reviews</h5>
       <div className="container">
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -56,20 +61,16 @@ const AddStudent = () => {
               value={review}
               onChange={(e) => setReview(e.target.value)}
             />
-          </Form.Group>
 
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+
             <Form.Text className="text-muted">
-              Please enter a rating (0-5)
+              Please enter select a rating
             </Form.Text>
-            <Form.Control
-              type="number"
-              placeholder="Enter your rate (Out of 5)"
-              name="price_rating"
-              min="0"
-              max="5"
-              value={price_rating}
-              onChange={(e) => setprice_rating(e.target.value)}
+            <br></br>
+            <Rating
+              onClick={handleRating}
+              ratingValue={price_rating}
+              
             />
           </Form.Group>
           <Button onClick={addNewStudent} variant="primary" type="submit">
