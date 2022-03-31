@@ -50,7 +50,7 @@ export default function SignupForm(props) {
         </Form.Group>
         <Button
           variant="outline-primary"
-          onClick={(e) => props.handle_login(e, { username, password })}
+          onClick={(e) => props.handle_signup(e, { username, password })}
           type="submit"
         >
           Submit
