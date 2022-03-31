@@ -37,7 +37,7 @@ const AddStudent = () => {
     formField.append("headphone", headphone);
     formField.append("author", author);
     formField.append("review", review);
-    formField.append("price_rating", price_rating/20);
+    formField.append("price_rating", price_rating);
 
     await axios({
       method: "post",
