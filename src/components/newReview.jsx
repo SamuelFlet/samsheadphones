@@ -10,6 +10,7 @@ var is_logged_in = false;
 const AddStudent = () => {
   const [headphone, setHeadphone] = useState([]);
   const [author, setAuthor] = useState(null);
+  const [title, setTitle] = useState(null);
   const [review, setReview] = useState(null);
   const [price_rating, setprice_rating] = useState(0);
   const logged_in = useState(localStorage.getItem("token") ? true : false);
@@ -29,13 +30,14 @@ const AddStudent = () => {
       });
   }
   const handleRating = (rate) => {
-    setprice_rating(rate)
+    setprice_rating(rate);
     // other logic
-  }
+  };
   const addNewStudent = async () => {
     let formField = new FormData();
     formField.append("headphone", headphone);
     formField.append("author", author);
+    formField.append("title", title);
     formField.append("review", review);
     formField.append("price_rating", price_rating);
 
@@ -50,10 +52,17 @@ const AddStudent = () => {
 
   return (
     <div className="container">
-      <h5>Reviews</h5>
       <div className="container">
+        <h5>Submit Review</h5>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control
+              type="text"
+              placeholder="Enter your review title"
+              name="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
             <Form.Control
               type="text"
               placeholder="Enter your review here"
@@ -62,16 +71,11 @@ const AddStudent = () => {
               onChange={(e) => setReview(e.target.value)}
             />
 
-
             <Form.Text className="text-muted">
               Please enter select a rating
             </Form.Text>
             <br></br>
-            <Rating
-              onClick={handleRating}
-              ratingValue={price_rating}
-              
-            />
+            <Rating onClick={handleRating} ratingValue={price_rating} />
           </Form.Group>
           <Button onClick={addNewStudent} variant="primary" type="submit">
             Submit

@@ -1,5 +1,11 @@
-.center{
-    text-align: center;
+#reviews{
+    margin-left:30%;
+    text-align:left;
+    max-width: 400px;
+}
+
+#title{
+    font-weight: bold;
 }
 
 .display{

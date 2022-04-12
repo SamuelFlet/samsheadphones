@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import NewReview from "../components/newReview";
+import { Rating } from "react-simple-star-rating";
 import "../styles/headphone.css";
 
 export default function Headphone() {
@@ -40,7 +41,14 @@ export default function Headphone() {
     if (num === params.headphoneId) {
       rows.push(
         <div>
-          {data[i].username}: {data[i].review}
+          <p>{data[i].username}</p>
+          <p id="title">
+            <Rating initialValue={data[i].price_rating / 20} readonly />
+            &ensp;{data[i].title}
+          </p>
+          <p>{data[i].date}</p>
+          <p>{data[i].review}</p>
+          
         </div>
       );
     }
@@ -67,8 +75,12 @@ export default function Headphone() {
           <p>{hdata.sensitivity} dB</p>
         </div>
       </div>
+      <h5>Reviews</h5>
+      <div id="reviews">
+        {rows}
+      </div>
 
-      {rows}
+      <br></br>
       <NewReview />
     </div>
   );
